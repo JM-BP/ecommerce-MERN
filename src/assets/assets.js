@@ -1,12 +1,12 @@
-import web_logo from './logo33.png'
-import esdla_lcda from './esdla-lcda.jpg'
-import esdla_lcda2 from './esdla-lcda2.png'
+import web_logo from './logo.png'
 import search_icon from './search-icon.png'
 import profile_icon from './profile-icon.png'
 import cart_icon from './cart-icon.png'
 import menu_icon from './menu-icon.png'
 import back_icon from './back-icon.png'
-import inicio from './logo.webp'
+import inicio from './logo.png'
+import esdla_lcda from './esdla-lcda.jpg'
+import esdla_lcda2 from './esdla-lcda2.png'
 
 export const assets = {
     web_logo,
@@ -26,7 +26,8 @@ export const books = [
         name: "EL SEÑOR DE LOS ANILLOS: LA COMUNIDAD DEL ANILLO",
         author: "J. R. R. Tolkien",
         genre: "Novela",
-        subgenre: "Fantasía",
+        format: "Book",
+        subgenre: "fantasy",
         bestseller: true,
         image: [esdla_lcda],
         editorial: "MINOTAURO",
@@ -38,7 +39,8 @@ export const books = [
         name: "El señor de los anillos: La comunidad del anillo",
         author: "J. R. R. Tolkien",
         genre: "Novela",
-        subgenre: "Fantasía",
+        format: "eBook",
+        subgenre: "Fantasy",
         bestseller: false,
         image: [web_logo],
         editorial: "MINOTAURO",
@@ -50,7 +52,8 @@ export const books = [
         name: "El señor de los anillos: La comunidad del anillo",
         author: "J. R. R. Tolkien",
         genre: "Novela",
-        subgenre: "Fantasía",
+        format: "Audiobook",
+        subgenre: "Horror",
         bestseller: false,
         image: [profile_icon],
         editorial: "MINOTAURO",
@@ -62,7 +65,8 @@ export const books = [
         name: "El señor de los anillos: La comunidad del anillo",
         author: "J. R. R. Tolkien",
         genre: "Novela",
-        subgenre: "Fantasía",
+        format: "audiobook",
+        subgenre: "Mystery",
         bestseller: true,
         image: [esdla_lcda2],
         editorial: "MINOTAURO",

@@ -1,6 +1,5 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import Banner from './Banner'
 
 function Hero() {
   return (
