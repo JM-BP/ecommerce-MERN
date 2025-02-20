@@ -2,20 +2,63 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { Link } from 'react-router-dom';
 
-const BookItem = ({id,image,name,genre,subgenre,price,tags})=> {
+const BookItem = ({id,image,name,format,category,price,tags,discountPrice})=> {
     const {currency} = useContext(ShopContext);
+
   return (
-    <Link className='text-gray-700 cursor-pointer p-2 pb-5' top={`/books/${id}`}>
-        <div className='overflow-hidden'>
-            <img className='hover:scale-110 transition ease-in-out' src={image[0]} alt="" />
+    <Link
+      className="block text-gray-700 cursor-pointer p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition"
+      to={`/book/${id}`}
+    >
+      {/* Imagen */}
+      <div className="overflow-hidden flex justify-center items-center bg-white">
+        <img
+          className="w-full h-96 object-contain hover:scale-105 transition ease-in-out"
+          src={image[0]}
+          alt={name}
+        />
+      </div>
+
+      {/* Nombre del libro */}
+      <p className="font-semibold text-mg mt-4">{name}</p>
+
+      {/* Autor */}
+      <p className="text-gray-600">J. R. R. Tolkien</p>
+
+      {/* Precio */}
+      <div className="text-lg font-semibold mt-2 flex items-center gap-2">
+        {false /*discountPrice*/ ? (
+          <>
+            <s className="text-gray-500 text-base">
+              {price}
+              {currency}
+            </s>
+            <span className="text-red-600">
+              {discountPrice}
+              {currency}
+            </span>
+          </>
+        ) : (
+          <span>
+            {price}
+            {currency}
+          </span>
+        )}
+      </div>
+
+      {/* Etiquetas responsivas */}
+      {tags && (
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded-full border border-black">
+            {format}
+          </span>
+          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full border border-blue-800">
+            {category}
+          </span>
         </div>
-        <p className='pt-3 pb-1 font-medium'>{name}</p>
-        <p className='text-lg font-semibold'>{price}{currency}
-          <span className={`hidden ${tags ? 'md:inline bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 ml-4 rounded-full border border-black' : ''}`}>{genre}</span>
-          <span className={`hidden ${tags ? 'md:inline bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full border border-blue-800':''}`}>{subgenre}</span>
-        </p>
+      )}
     </Link>
-  )
+  );
 }
 
 export default BookItem

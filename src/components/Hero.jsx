@@ -13,7 +13,7 @@ function Hero() {
                         Encuentra tu próxima lectura
                     </p>
                 </div>
-                <h1 className='prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed'>Libros e eBooks</h1>
+                <h1 className='prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed'>Books & eBooks</h1>
                 <div className='flex items-center gap-2'>
                     <p className='font-medium text-sm md:text-base'>Hazte con el tuyo</p>
                     <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
@@ -21,7 +21,7 @@ function Hero() {
             </div>
         </div>
         {/* Hero Right Side */}
-        <img className='w-full sm:w-1/2' src="https://www.teleread.com/wp-content/uploads/2016/05/fantasy_books.jpg" alt="" />
+        <img className='w-full sm:w-1/2' src={assets.home_img} alt="" />
     </div>
   )
 }

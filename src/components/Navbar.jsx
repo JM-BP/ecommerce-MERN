@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { assets } from '../assets/assets'
 import { Link, NavLink } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 
 const Navbar = () => {
 
   const [visible, setVisible] = useState(false);
+  const {setShowSearch, getCartCount} = useContext(ShopContext);
 
   return (
-    <div className='flex items-center justify-between py-5 font-bold'>
-      <Link to='/'><img src={assets.web_logo} className='w-24 border border-gray-700 rounded-full' alt="web-logo" /></Link>      
+    <div className='flex items-center justify-between py-2 font-bold'>
+      <Link to='/'><img src={assets.web_logo} className='w-20 border border-gray-700 rounded-full' alt="web-logo" /></Link>      
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
         <NavLink to='/' className='flex flex-col items-center gap-1'>
           <p>HOME</p>
@@ -28,7 +30,7 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className='flex items-center gap-6'>
-        <img src={assets.search_icon} className='w-5 cursor-pointer' alt="search-icon" />
+        <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer' alt="search-icon" />
           <div className='group relative'>
             <img src={assets.profile_icon} className='w-5 cursor-pointer' alt="profile-icon" />
             <div className='group-hover:block hidden absolute dropdow-menu right-0 pt-4'>
@@ -43,7 +45,7 @@ const Navbar = () => {
             <div className="relative">
               <img src={assets.cart_icon} className="w-5 min-w-5" alt="cart-icon" />
               <p className="absolute top-5 right-0 translate-x-1/2 translate-y-[-50%] w-4 h-4 flex items-center justify-center bg-black text-white rounded-full text-[8px]">
-                10
+               {getCartCount()}
               </p>
             </div>
           </Link>
