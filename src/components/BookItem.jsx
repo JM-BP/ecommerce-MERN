@@ -1,9 +1,18 @@
-import React, { useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import { Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { ShopContext } from "../context/ShopContext";
+import { Link } from "react-router-dom";
 
-const BookItem = ({id,image,name,format,category,price,tags,discountPrice})=> {
-    const {currency} = useContext(ShopContext);
+const BookItem = ({
+  id,
+  image,
+  name,
+  format,
+  category,
+  price,
+  tags,
+  discountPrice,
+}) => {
+  const { currency } = useContext(ShopContext);
 
   return (
     <Link
@@ -59,6 +68,6 @@ const BookItem = ({id,image,name,format,category,price,tags,discountPrice})=> {
       )}
     </Link>
   );
-}
+};
 
-export default BookItem
+export default BookItem;
