@@ -13,6 +13,9 @@ import home_img from "./home-img.jpg";
 import star_icon from "./star1.png";
 import star1_icon from "./star2.webp";
 import delete_icon from "./delete-icon.png";
+import about_us_img from "./aboutUs-image.webp";
+import about_us_img2 from "./aboutUs2-img.webp";
+import contact_us_img from "./contact-us-img.jpg";
 
 export const assets = {
   web_logo,
@@ -30,6 +33,9 @@ export const assets = {
   star_icon,
   star1_icon,
   delete_icon,
+  about_us_img,
+  about_us_img2,
+  contact_us_img,
 };
 
 export const books = [
