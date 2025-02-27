@@ -47,22 +47,7 @@ const bookSchema = new mongoose.Schema({
     height: { type: Number },
     depth: { type: Number },
   },
-  weight: { type: Number }, // Peso del libro
-  fileSize: { type: Number }, // Tamaño del archivo para ebooks o audiolibros
-  fileFormat: { type: String }, // Formato del archivo (PDF, EPUB, MP3, etc.)
-  ratings: {
-    average: { type: Number, default: 0 },
-    count: { type: Number, default: 0 },
-  },
-  reviews: [
-    {
-      userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-      rating: { type: Number, required: true },
-      comment: { type: String },
-      createdAt: { type: Date, default: Date.now },
-    },
-  ],
-  tags: { type: [String], default: [] }, // Etiquetas para filtros
+  weight: { type: Number },
   bestseller: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
 });

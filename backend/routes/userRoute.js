@@ -5,10 +5,10 @@ import {
   adminLogin,
 } from "../controllers/userController.js";
 
-const useRouter = express.Router();
+const userRouter = express.Router();
 
-useRouter.post("/register", registerUser);
-useRouter.post("/login", registerUser);
-useRouter.post("/admin", registerUser);
+userRouter.post("/register", registerUser);
+userRouter.post("/login", loginUser);
+userRouter.post("/admin", adminLogin);
 
-export default useRouter;
+export default userRouter;
