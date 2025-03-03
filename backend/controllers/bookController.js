@@ -137,6 +137,15 @@ const removeBook = async (req, res) => {
 };
 
 //Function for single book info
-const singleBook = async (req, res) => {};
+const singleBook = async (req, res) => {
+  try {
+    const { bookId } = req.body;
+    const book = await bookModel.findById(bookId);
+    res.json({ success: true, book });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 export { listBooks, addBook, removeBook, singleBook };
