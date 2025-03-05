@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios";
 import { backendUrl } from "../App";
+import { toast } from "react-toastify";
 
 const Add = ({ token }) => {
   const [name, setName] = useState("");
@@ -35,7 +36,6 @@ const Add = ({ token }) => {
       formData.append("categories", JSON.stringify(categoriesArray)); // Send as JSON string
       formData.append("price", price);
 
-      // Append images correctly
       if (image1) formData.append("image1", image1);
       if (image2) formData.append("image2", image2);
 
@@ -58,21 +58,43 @@ const Add = ({ token }) => {
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Correct header format
+            Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         }
       );
 
-      console.log("Response:", response.data);
-      // Reset form after successful submission if needed
-      setName("");
-      setAuthor("");
-      // ... reset other fields
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setName("");
+        setAuthor("");
+        setDescription("");
+        setGenre("");
+        setCategories("");
+        setPrice("");
+        setImage1(null);
+        setImage2(null);
+        setDiscount("0");
+        setPublicationDate("");
+        setPages("");
+        setLanguage("English");
+        setPublisher("");
+        setWidth("");
+        setHeight("");
+        setDepth("");
+        setWeight("");
+        setBestseller(false);
+      } else {
+        toast.error(response.data.message);
+      }
     } catch (error) {
       console.error(
         "Error submitting form:",
         error.response?.data || error.message
+      );
+      toast.error(
+        error.response?.data?.message ||
+          "An error occurred while adding the book"
       );
     }
   };

@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { books } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 export const ShopContext = createContext();
@@ -7,6 +6,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
   const currency = "€";
   const delivery_fee = 10.3;
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
@@ -82,6 +82,7 @@ const ShopContextProvider = (props) => {
     updateQuantity,
     getCartAmount,
     navigate,
+    backendUrl,
   };
 
   return (
