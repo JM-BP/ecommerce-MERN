@@ -10,7 +10,7 @@ const Bestseller = () => {
   useEffect(() => {
     const bestBook = books.filter((item) => item.bestseller);
     setBestSeller(bestBook.slice(0, 4));
-  }, []);
+  }, [books]);
 
   return (
     <div className="my-10">

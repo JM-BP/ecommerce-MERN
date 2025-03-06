@@ -93,7 +93,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [genre, category, search, showSearch]);
+  }, [genre, category, search, showSearch, books]);
 
   useEffect(() => {
     sortBooks();
