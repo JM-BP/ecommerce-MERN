@@ -90,6 +90,12 @@ const ShopContextProvider = (props) => {
     getProductData();
   }, []);
 
+  useEffect(() => {
+    if (!token && localStorage.getItem("token")) {
+      setToken(localStorage.getItem("token"));
+    }
+  });
+
   const value = {
     books,
     currency,
@@ -108,6 +114,7 @@ const ShopContextProvider = (props) => {
     getProductData,
     setToken,
     token,
+    setCartItems,
   };
 
   return (

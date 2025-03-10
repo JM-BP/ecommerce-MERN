@@ -1,6 +1,6 @@
 import { response } from "express";
 import userModel from "../models/userModel.js";
-import validador from "validator";
+import validator from "validator";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
@@ -43,7 +43,7 @@ const registerUser = async (req, res) => {
     }
 
     //Validating email and password
-    if (!validador.isEmail(email)) {
+    if (!validator.isEmail(email)) {
       return res.json({
         success: false,
         message: "Please enter a valid email",
