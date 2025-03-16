@@ -24,7 +24,7 @@ const Book = () => {
   return bookData ? (
     <div className="border-t-2 pt-6 transition-opacity ease-in duration-500 opacity-100 max-w-6xl mx-auto">
       <div className="flex flex-col lg:flex-row gap-10 items-start">
-        {/* Product Images */}
+        {/* Book Images */}
         <div className="w-full lg:w-1/3 flex flex-col items-center">
           {/* Main image */}
           <div className="w-full max-w-xs">
@@ -48,7 +48,7 @@ const Book = () => {
           </div>
         </div>
 
-        {/* Product Info */}
+        {/* Book Info */}
         <div className="flex-1">
           <h1 className="font-bold text-2xl">{bookData.name}</h1>
           <p className="text-gray-600 text-lg mt-2 font-semibold">

@@ -17,6 +17,8 @@ const Cart = () => {
   }, [books]);
 
   useEffect(() => {
+    if (books.lenght > 0) {
+    }
     const tempData = Object.entries(cartItems).flatMap(([bookId, formats]) =>
       Object.entries(formats)
         .filter(([_, quantity]) => quantity > 0)
@@ -28,7 +30,7 @@ const Cart = () => {
     );
 
     setCartData(tempData);
-  }, [cartItems]);
+  }, [cartItems, books]);
 
   return (
     <div className="border-t pt-5 w-full mx-auto">

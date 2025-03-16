@@ -13,6 +13,8 @@ import delete_icon from "./delete-icon.png";
 import about_us_img from "./aboutUs-image.webp";
 import about_us_img2 from "./aboutUs2-img.webp";
 import contact_us_img from "./contact-us-img.jpg";
+import stripe_icon from "./stripe.png";
+import razorpay_icon from "./razorpay.png";
 
 export const assets = {
   web_logo,
@@ -30,4 +32,6 @@ export const assets = {
   about_us_img,
   about_us_img2,
   contact_us_img,
+  stripe_icon,
+  razorpay_icon,
 };

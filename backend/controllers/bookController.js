@@ -1,4 +1,3 @@
-import { response } from "express";
 import { v2 as cloudinary } from "cloudinary";
 import bookModel from "../models/bookModel.js";
 
