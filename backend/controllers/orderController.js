@@ -40,7 +40,6 @@ const placeOrder = async (req, res) => {
   }
 };
 
-// Otras funciones vacías
 const placeOrderStripe = async (req, res) => {};
 const placeOrderRazorpay = async (req, res) => {};
 const allOrders = async (req, res) => {
@@ -62,7 +61,16 @@ const userOrders = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
-const updateStatus = async (req, res) => {};
+const updateStatus = async (req, res) => {
+  try {
+    const { orderId, status } = req.body;
+    await orderModel.findByIdAndUpdate(orderId, { status });
+    res.json({ success: true, message: "Status Updated" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 export {
   placeOrder,
