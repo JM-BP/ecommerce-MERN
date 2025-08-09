@@ -154,7 +154,7 @@ const Collection = () => {
 
         {/* Category Filter */}
         <div
-          className={`border border-gray-300 pl-5 py-3 my-6 ${
+          className={`border border-gray-500 pl-5 py-3 my-6 ${
             showFilter ? "" : "hidden"
           } sm:block`}
         >
@@ -197,6 +197,7 @@ const Collection = () => {
             <BookCollection
               key={index}
               name={item.name}
+              author={item.author}
               id={item._id}
               price={item.price}
               genre={item.genre}

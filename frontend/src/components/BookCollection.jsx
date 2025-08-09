@@ -2,7 +2,16 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { Link } from "react-router-dom";
 
-const BookItem = ({ id, image, name, genre, subgenre, price, tags }) => {
+const BookItem = ({
+  id,
+  image,
+  name,
+  author,
+  genre,
+  subgenre,
+  price,
+  tags,
+}) => {
   const { currency } = useContext(ShopContext);
   return (
     <Link
@@ -18,6 +27,7 @@ const BookItem = ({ id, image, name, genre, subgenre, price, tags }) => {
         />
       </div>
       <p className="pt-3 pb-1 font-medium">{name}</p>
+      <p className="pt-3 pb-1 font-light">{author}</p>
       <p className="text-lg font-semibold">
         {price}
         {currency}

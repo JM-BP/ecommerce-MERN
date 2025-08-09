@@ -6,6 +6,7 @@ const BookItem = ({
   id,
   image,
   name,
+  author,
   format,
   category,
   price,
@@ -32,7 +33,7 @@ const BookItem = ({
       <p className="font-semibold text-mg mt-4">{name}</p>
 
       {/* Autor */}
-      <p className="text-gray-600">J. R. R. Tolkien</p>
+      <p className="text-gray-600">{author}</p>
 
       {/* Precio */}
       <div className="text-lg font-semibold mt-2 flex items-center gap-2">

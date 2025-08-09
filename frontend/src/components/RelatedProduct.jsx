@@ -26,6 +26,7 @@ const RelatedProduct = ({ genre }) => {
             key={index}
             id={item._id}
             name={item.name}
+            author={item.author}
             price={item.price}
             image={item.image}
           />
